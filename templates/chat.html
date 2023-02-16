@@ -1,0 +1,45 @@
+<!-- display welcome message to logged in user -->
+<html>
+    <head>
+        <title>Welcome</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/chatpage.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/static/js/chatpage.js"></script>
+    </head>
+    <body>
+        <!-- Set a js variable with username -->
+        <script>
+            var uname = "{{username}}";
+        </script>
+
+        <!-- Create chat template -->
+        <section class="msger">
+            <header class="msger-header">
+              <div class="msger-header-title">
+                <i class="fas fa-comment-alt"></i> Welcome, {{username}}
+              </div>
+              <div class="msger-header-options">
+                <span><i class="fas fa-cog"></i></span>
+              </div>
+            </header>
+          
+            <main class="msger-chat">
+              <!-- this is where the chat renders -->
+            </main>
+          
+            <form class="msger-inputarea" action="">
+              <input type="text" class="msger-input" placeholder="Enter your message...">
+              <button type="submit" class="msger-send-btn">Send</button>
+            </form>
+          </section>
+
+        <!-- <script>
+            function LogoutBtn() {
+                document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                window.location.href = "/";
+            }
+        </script>
+        <button onclick="LogoutBtn()">Logout</button> -->
+    </body>
+</html>

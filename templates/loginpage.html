@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Authentication Page</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/loginpage.css">
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/static/js/loginpage.js"></script>
+    </head>
+
+    <body>
+        <div id="createaccount">
+            <form action="" id="createaccountform">
+                <label for="email">Email: </label>
+                <input type="text" name="email" placeholder="Email" id="emailcreate" required>
+                <label for="password">Password: </label>
+                <input type="password" name="password" placeholder="Password" id="passwordcreate" required>
+                <label for="username">Username: </label>
+                <input type="text" name="display_name" placeholder="Username" id="usernamecreate" required>
+                <input type="submit" value="Create Account">
+            </form>
+        </div>
+        <div id="login" style="display: none">
+            <form action="" id="loginform">
+                <label for="email">Email: </label>
+                <input type="text" name="email" placeholder="Email" id="emaillogin" required>
+                <label for="password">Password: </label>
+                <input type="password" name="password" placeholder="Password" id="passwordlogin" required>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+        <script>
+            function switchToLogin() {
+                if (document.getElementById("switchbtn").innerHTML == "Login") {
+                    document.getElementById("createaccount").style.display = "none";
+                    document.getElementById("login").style.display = "block";
+                    document.getElementById("switchbtn").innerHTML = "Create Account";
+                } else {
+                    document.getElementById("createaccount").style.display = "block";
+                    document.getElementById("login").style.display = "none";
+                    document.getElementById("switchbtn").innerHTML = "Login";
+                }
+            }
+        </script>
+        <button onclick="switchToLogin()" id="switchbtn">Login</button>        
+    </body>
+</html>
